@@ -8,6 +8,7 @@ trigger:
 
 pool:
   vmImage: 'windows-latest'
+  demands: Agent.Version -equals 4.251.0
 
 steps:
 - task: Maven@4
