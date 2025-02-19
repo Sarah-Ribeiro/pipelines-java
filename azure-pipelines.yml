@@ -20,8 +20,8 @@ jobs:
       mavenPomFile: 'pom.xml'
       mavenOptions: '-Xmx3072m'
       javaHomeOption: 'JDKVersion'
-      jdkVersionOption: 'default'
+      jdkVersionOption: 'Default'
       jdkArchitectureOption: 'x64'
       publishJUnitResults: true
-      testResultsFiles: '**/TEST-*.xml'
+      testResultsFiles: '**/surefire-reports/TEST-*.xml'
       goals: 'package'
