@@ -15,12 +15,6 @@ jobs:
 - job: BuildAndTest
   displayName: Build and Test with Gradle
   steps:
-  - task: JavaToolInstaller@1
-    inputs:
-      versionSpec: '21'
-      jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'PreInstalled'
-
   - script: java -version
     displayName: Print Java Version
   
@@ -29,6 +23,12 @@ jobs:
   
   - script: chmod +x gradlew
     displayName: Grant execute permissions to gradlew
+  
+  - task: JavaToolInstaller@1
+    inputs:
+      versionSpec: '21'
+      jdkArchitectureOption: 'x64'
+      jdkSourceOption: 'PreInstalled'
 
   - task: Gradle@3
     displayName: Run build of the app with gradle
