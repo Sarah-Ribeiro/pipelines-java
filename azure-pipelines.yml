@@ -17,6 +17,9 @@ jobs:
   steps:
   - script: java -version
     displayName: Print Java Version
+    env:
+      JAVA_HOME: $(JAVA_HOME_21_X86)
+      PATH: $(JAVA_HOME_21_X86)/bin;$(PATH)
   
   - script: echo %JAVA_HOME%
     displayName: Print JAVA_HOME
