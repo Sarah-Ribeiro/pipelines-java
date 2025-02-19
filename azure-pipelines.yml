@@ -18,7 +18,7 @@ jobs:
   - script: java -version
     displayName: Print Java Version
   
-  - script: echo $env:JAVA_HOME
+  - script: echo %JAVA_HOME%
     displayName: Print JAVA_HOME
   
   - script: sudo chmod +x gradlew
