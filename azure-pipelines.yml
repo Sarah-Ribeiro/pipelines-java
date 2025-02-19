@@ -6,10 +6,13 @@
 trigger:
 - main
 
+pool:
+  name: Default
+  demands:
+  - SpecialSoftware
+
 jobs:
 - job: Linux
-  pool:
-    vmImage: 'ubuntu-latest'
   steps:
   - script: echo "Hello from Linux"
   - task: Maven@4
