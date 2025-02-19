@@ -17,15 +17,15 @@ jobs:
   steps:
   - task: JavaToolInstaller@1
     inputs:
-      versionSpec: '8'
+      versionSpec: '21'
       jdkArchitectureOption: 'x64'
-      jdkSourceOption: 'LocalDirectory'
-      jdkFile: 'C:\Program Files\Microsoft\jdk-21.0.6.7-hotspot\bin\java.exe'
-      jdkDestinationDirectory: 'C:\Program Files\Microsoft\jdk-21.0.6.7-hotspot'
-      cleanDestinationDirectory: true
+      jdkSourceOption: 'PreInstalled'
 
   - script: java -version
     displayName: Print Java Version
+  
+  - script: echo $JAVA_HOME
+    displayName: Print JAVA_HOME
   
   - script: chmod +x gradlew
     displayName: Grant execute permissions to gradlew
