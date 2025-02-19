@@ -21,7 +21,7 @@ jobs:
   - script: echo %JAVA_HOME%
     displayName: Print JAVA_HOME
   
-  - script: sudo chmod +x gradlew
+  - script: chmod +x gradlew
     displayName: Grant execute permissions to gradlew
   
   - task: JavaToolInstaller@1
