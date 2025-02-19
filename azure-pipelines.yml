@@ -27,9 +27,9 @@ jobs:
   - script: icacls gradlew /grant Everyone:F
     displayName: Grant execute permissions to gradlew
   
-  - task: JavaToolInstaller@1
+  - task: JavaToolInstaller@0
     inputs:
-      versionSpec: '21'
+      versionSpec: '11'
       jdkArchitectureOption: 'x64'
       jdkSourceOption: 'PreInstalled'
 
