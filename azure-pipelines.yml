@@ -7,8 +7,8 @@ trigger:
 - main
 
 pool:
-  vmImage: 'ubuntu-latest'
-  demands: Agent.Version -equals 4.251.0
+  name: Default
+  demands: SpecialSoftware
 
 steps:
 - task: Maven@4
