@@ -11,15 +11,20 @@ pool:
   demands:
   - Agent.Version -equals 4.251.0
 
-steps:
-- script: |
-    java -version
-- task: Gradle@3
-  inputs:
-    gradleWrapperFile: 'gradlew'
-    tasks: 'build'
-    publishJUnitResults: true
-    testResultsFiles: '**/TEST-*.xml'
-    javaHomeOption: 'JDKVersion'
-    sonarQubeRunAnalysis: false
-    spotBugsAnalysis: false
+jobs:
+- job: BuildAndTest
+  displayName: Build and Test with Gradle
+  steps:
+  - script: |
+      java -version
+    displayName: Print Java Version
+  - task: Gradle@3
+    displayName: Run build of the app with gradle
+    inputs:
+      gradleWrapperFile: 'gradlew'
+      tasks: 'build'
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
+      sonarQubeRunAnalysis: false
+      spotBugsAnalysis: false
