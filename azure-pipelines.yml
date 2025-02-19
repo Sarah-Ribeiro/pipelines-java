@@ -10,18 +10,12 @@ pool:
   name: 'Default'
 
 steps:
-- task: JavaToolInstaller@0
-  inputs:
-    versionSpec: '21'
-    jdkArchitecture: 'x64'
-    jdkSource: 'PreInstalled'
-
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: $(JAVA_HOME)
+    javaHomeOption: 'Path'
+    jdkVersionOption: $(JAVA_HOME_21_X64)
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
